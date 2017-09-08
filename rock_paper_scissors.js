@@ -1,16 +1,3 @@
-/*
-const getUserChoice = userInput => {
-  userInput = prompt('Please enter either rock, paper, or sciccors.').toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    return userInput;
-  } else if (userInput === 'bomb') {
-    document.write('<h1>You won!</h1>');
-  } else {
-    alert('You need to enter either rock, paper, or scissors.');
-  }
-};
-*/
-
 // Prompt to get user choice
 const getUserChoice = userInput => {
   userInput = prompt('Please enter either rock, paper, or sciccors.').toLowerCase();
