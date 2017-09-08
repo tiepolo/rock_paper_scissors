@@ -1,7 +1,20 @@
-// Prompt to get user choice
+/*
 const getUserChoice = userInput => {
   userInput = prompt('Please enter either rock, paper, or sciccors.').toLowerCase();
   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    return userInput;
+  } else if (userInput === 'bomb') {
+    document.write('<h1>You won!</h1>');
+  } else {
+    alert('You need to enter either rock, paper, or scissors.');
+  }
+};
+*/
+
+// Prompt to get user choice
+const getUserChoice = userInput => {
+  userInput = prompt('Please enter either rock, paper, or sciccors.').toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
     return userInput;
   } else {
     alert('You need to enter either rock, paper, or scissors.');
@@ -52,8 +65,12 @@ const determineWinner = (userChoice, computerChoice) => {
 const playGame = () => {
   const userChoice = getUserChoice();
   const computerChoice = getComputerChoice();
-  document.write('You threw: ' + userChoice + '<br />');
-  document.write('The computer threw: ' + computerChoice + '<br />');
-  document.write(determineWinner(userChoice, computerChoice) + '<br />');
+  if (userChoice !== 'bomb') {
+    document.write('You threw: ' + userChoice + '<br />');
+    document.write('The computer threw: ' + computerChoice + '<br />');
+    document.write(determineWinner(userChoice, computerChoice) + '<br />');
+  } else {
+    document.write('<h1>You won because you knew the secret!</h1>');
+  }
 }
 playGame();
